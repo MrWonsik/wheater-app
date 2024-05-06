@@ -8,7 +8,7 @@
     "build": "tsc && vite build",
     "lint": "eslint react-ts --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "deploy": "npm run build && rm -r docs/* && cp -r dist/* docs/ && git reset HEAD -- && git add docs && git commit -m 'update github pages' && git pull origin master"
+    "deploy": "npm run build && rmdir /S /Q docs && mkdir docs && xcopy /e /y dist docs && git reset HEAD -- && git add docs && git commit -m \"update github pages\" && git pull origin master"
   },
   "dependencies": {
     "react": "^18.2.0",
